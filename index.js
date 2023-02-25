@@ -315,7 +315,7 @@ if (appUrl) {
   ])
   window.location = appUrl + args.join('')
 } else {
-  const pin = open('http://TARGET_URL/bookmarks/add?' + args.join(''), 'WINDOW_TITLE', `toolbar=no,width=${width},height=${height}`)
+  const pin = open('TRANSPORT://HOST/bookmarks/add?' + args.join(''), 'WINDOW_TITLE', `toolbar=no,width=${width},height=${height}`)
 
   // nice to have: load json file of recent type->names maps to avoid dupes
   if (additional) {
@@ -326,7 +326,7 @@ if (appUrl) {
       '&tags=', encodeURIComponent(additional.tags.join(' '))
     ]
 
-    open('http://TARGET_URL/bookmarks/add?' + additionalArgs.join(''), 'WINDOW_TITLE 2', `toolbar=no,width=${width},height=${height}`)
+    open('TRANSPORT://HOST/bookmarks/add?' + additionalArgs.join(''), 'WINDOW_TITLE 2', `toolbar=no,width=${width},height=${height}`)
   }
 
   // Send the window to the background if readlater mode.
