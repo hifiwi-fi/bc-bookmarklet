@@ -40,7 +40,7 @@
   },
   "scripts": {
     "prepare": "rm -rf dist && run-s build",
-    "prepublishOnly": "git push --follow-tags && gh-releas -y",
+    "prepublishOnly": "git push --follow-tags && gh-release -y",
     "test": "run-s test:*",
     "test:deptree": "depcruise --validate .dependency-cruiser.json .",
     "test:standard": "standard --verbose | snazzy",
