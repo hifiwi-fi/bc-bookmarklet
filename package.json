@@ -1,9 +1,9 @@
 {
   "name": "@breadcrum/bookmarklet",
-  "description": "WIP - nothing to see here",
+  "description": "Bookmarklet for breadcrum.net",
   "files": [
-    "*.js",
-    "lib/*.js"
+    "dist/*.js",
+    "dist/*.js.map"
   ],
   "version": "0.0.0",
   "author": "Bret Comnes <bcomnes@gmail.com> (https://bret.io)",
@@ -32,13 +32,14 @@
   "type": "module",
   "module": "index.js",
   "exports": {
-    "import": "./index.js"
+    "import": "./dist/out.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/hifiwi-fi/bc-bookmarklet.git"
   },
   "scripts": {
+    "prepare": "rm -rf dist && run-s build",
     "prepublishOnly": "git push --follow-tags && gh-releas -y",
     "test": "run-s test:*",
     "test:deptree": "depcruise --validate .dependency-cruiser.json .",
@@ -46,8 +47,9 @@
     "test:tap": "METRICS=0 c8 tap --no-coverage --color",
     "version": "run-s prepare version:*",
     "version:changelog": "auto-changelog -p --template keepachangelog auto-changelog --breaking-pattern 'BREAKING CHANGE:'",
-    "version:git": "git add CHANGELOG.md",
-    "deps": "depcruise --exclude '^node_modules' --output-type dot . | dot -T svg | depcruise-wrap-stream-in-html > dependency-graph.html"
+    "version:git": "git add CHANGELOG.md dist",
+    "deps": "depcruise --exclude '^node_modules' --output-type dot . | dot -T svg | depcruise-wrap-stream-in-html > dependency-graph.html",
+    "build": "node scripts/build.js"
   },
   "standard": {
     "ignore": [

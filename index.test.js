@@ -1,6 +1,11 @@
 import tap from 'tap'
-import { hello } from './index.js'
+import getBookmarklet from './dist/out.js'
 
 tap.test('index export', async (t) => {
-  t.equal(hello(), 'world')
+  const bookmarkletText = getBookmarklet({
+    TARGET_URL: 'breadcrum.net',
+    WINDOW_TITLE: 'Breadcrum'
+  })
+
+  t.ok(bookmarkletText, 'Got the bookmarklet text')
 })

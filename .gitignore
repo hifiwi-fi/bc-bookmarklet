@@ -6,3 +6,4 @@ coverage
 public
 .env
 dependency-graph.html
+test-out.js

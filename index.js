@@ -29,7 +29,7 @@ const tagKeywords = {
 
 const urlTags = {
   'gist.github.com/([^/]+)/([^/]+)': 'repo',
-  'github.com\/([^\/]+)\/([^\/]+)': 'repo',
+  'github.com\/([^\/]+)\/([^\/]+)': 'repo', // eslint-disable-line no-useless-escape
   'github.com/([^/]+)$': 'person',
   'twitter.com/([^/]+)/status/.*$': 'comment',
   'twitter.com/([^/]+)$': 'person',
@@ -45,7 +45,7 @@ const urlTags = {
   'imdb.com/name': 'person',
   'news.ycombinator.com/item': 'comment',
   'reddit.com': 'comment',
-  'blog\.': 'blog',
+  'blog\.': 'blog', // eslint-disable-line no-useless-escape
   'schema.org/\\S+': 'type',
   'goodreads.com/book/show/': 'book'
 }
@@ -59,6 +59,9 @@ const titleTweaks = {
 const descriptionTweaks = {
   'www.kickstarter.com': '.short-blurb'
 }
+
+const height = 680
+const width = 710
 
 // limit long titles and descriptions, mostly to avoid 'HTTP/1.0 414 Request URI too long'
 const textLengthLimit = 1000
@@ -131,7 +134,7 @@ const getTitle = function () {
 
   // method 1 - look for link to self with text that is contained in title
 
-  var a_text = selectFromNodeList(document.getElementsByTagName('A'), function (a) {
+  let a_text = selectFromNodeList(document.getElementsByTagName('A'), function (a) {
     if (a.href === url) {
       a_text = elementText(a)
       if (isSubtitle(a_text)) {
@@ -287,7 +290,8 @@ const processAdditionalArgs = function (text) {
   let re, matches
   for (const url in additionalEntities) {
     re = url instanceof RegExp ? url : new RegExp('\\b' + url + '\\b', 'i')
-    if (matches = text.match(re)) {
+    if (text.match(re)) {
+      matches = text.match(re)
       return additionalEntities[url](matches)
     }
   }
@@ -311,7 +315,7 @@ if (appUrl) {
   ])
   window.location = appUrl + args.join('')
 } else {
-  const pin = open('http://TARGET_URL/add?' + args.join(''), 'WINDOW_TITLE', 'toolbar=no,width=610,height=350')
+  const pin = open('http://TARGET_URL/bookmarks/add?' + args.join(''), 'WINDOW_TITLE', `toolbar=no,width=${width},height=${height}`)
 
   // nice to have: load json file of recent type->names maps to avoid dupes
   if (additional) {
@@ -322,7 +326,7 @@ if (appUrl) {
       '&tags=', encodeURIComponent(additional.tags.join(' '))
     ]
 
-    open('http://TARGET_URL/add?' + additionalArgs.join(''), 'WINDOW_TITLE 2', 'toolbar=no,width=610,height=350')
+    open('http://TARGET_URL/bookmarks/add?' + additionalArgs.join(''), 'WINDOW_TITLE 2', `toolbar=no,width=${width},height=${height}`)
   }
 
   // Send the window to the background if readlater mode.
