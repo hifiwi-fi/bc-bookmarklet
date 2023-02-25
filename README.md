@@ -2,7 +2,6 @@
 [![Actions Status](https://github.com/hifiwi-fi/bc-bookmarklet/workflows/tests/badge.svg)](https://github.com/hifiwi-fi/bc-bookmarklet/actions)
 [![latest version](https://img.shields.io/npm/v/@breadcrum/bookmarklet.svg)](https://www.npmjs.com/package/@breadcrum/bookmarklet)
 [![Coverage Status](https://coveralls.io/repos/github/hifiwi-fi/bc-bookmarklet/badge.svg?branch=master)](https://coveralls.io/github/hifiwi-fi/bc-bookmarklet?branch=master)
-[![downloads](https://img.shields.io/npm/dm/@breadcrum/bookmarklet.svg)](https://npmtrends.com/@breadcrum/bookmarklet)
 
 
 This is the bookmarklet for Breadcrum.net.
