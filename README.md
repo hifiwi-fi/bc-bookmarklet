@@ -14,7 +14,7 @@ npm install bookmarklet
 ## Usage
 
 ``` js
-import bookmarkletText from '@breadcrum/bookmarklet'
+import getBookmarklet from '@breadcrum/bookmarklet'
 
 const bookmarkletText = getBookmarklet({
   TARGET_URL: 'breadcrum.net',
