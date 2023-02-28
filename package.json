@@ -35,7 +35,10 @@
   "main": "./dist/out.js",
   "exports": {
     ".": "./dist/out.js",
-    "./version.js": "./dist/version.js"
+    "./dist/out.js": "./dist/out.js",
+    "./dist/out.js.map": "./dist/out.js.map",
+    "./dist/version.js": "./dist/version.js",
+    "./dist/version.js.map": "./dist/version.js.map"
   },
   "repository": {
     "type": "git",
