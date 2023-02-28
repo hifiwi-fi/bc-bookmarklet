@@ -9,6 +9,10 @@ const width = 710
 const url = location.href
 const { title, summary, tags } = extractMeta(document)
 
-const params = new URLSearchParams({ url, title, note: summary, tags, ver, jump: 'close' })
+const params = new URLSearchParams({ url, title, note: summary, ver, jump: 'close' })
+
+for (const tag of tags) {
+  params.append('tags', tag)
+}
 
 window.open(`TRANSPORT://HOST/bookmarks/add?${params.toString()}`, 'WINDOW_TITLE', `toolbar=no,width=${width},height=${height}`)

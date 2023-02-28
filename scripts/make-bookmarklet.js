@@ -5,7 +5,6 @@ import { readFile } from 'fs/promises'
 
 const __dirname = dirname(import.meta.url)
 const wrapperPath = join(__dirname, 'wrapper.js')
-const versionPath = join(__dirname, 'version.js')
 
 const pkg = JSON.parse(await readFile(join(__dirname, '../package.json')))
 
