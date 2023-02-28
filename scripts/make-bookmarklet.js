@@ -1,9 +1,13 @@
 import esbuild from 'esbuild'
 import { dirname } from 'desm'
 import { join } from 'path'
+import { readFile } from 'fs/promises'
 
 const __dirname = dirname(import.meta.url)
 const wrapperPath = join(__dirname, 'wrapper.js')
+const versionPath = join(__dirname, 'version.js')
+
+const pkg = JSON.parse(await readFile(join(__dirname, '../package.json')))
 
 export async function makeBookmarklet (src, dest) {
   const buildOpts = {
@@ -18,7 +22,10 @@ export async function makeBookmarklet (src, dest) {
     ],
     metafile: true,
     minify: true,
-    write: false
+    write: false,
+    define: {
+      PKG: JSON.stringify({ ver: pkg.version })
+    }
   }
 
   const result = await esbuild.build(buildOpts)
