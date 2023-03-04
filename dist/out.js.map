@@ -2,6 +2,6 @@
   "version": 3,
   "sources": ["<define:DATA>", "../scripts/wrapper.js"],
   "sourcesContent": ["", "export default function getBookmarklet (vars = {}) {\n  let { bookmarklet } = DATA // eslint-disable-line no-undef\n  for (const [key, value] of Object.entries(vars)) {\n    bookmarklet = bookmarklet.replaceAll(key, value)\n  }\n\n  return bookmarklet\n}\n"],
-  "mappings": ";AAAA,4BAAC,aAAc,wkIAAgxI;;;ACAhxI,SAAR,eAAiC,OAAO,CAAC,GAAG;AACjD,MAAI,EAAE,YAAY,IAAI;AACtB,aAAW,CAAC,KAAK,KAAK,KAAK,OAAO,QAAQ,IAAI,GAAG;AAC/C,kBAAc,YAAY,WAAW,KAAK,KAAK;AAAA,EACjD;AAEA,SAAO;AACT;",
+  "mappings": ";AAAA,4BAAC,aAAc,05HAAkmI;;;ACAlmI,SAAR,eAAiC,OAAO,CAAC,GAAG;AACjD,MAAI,EAAE,YAAY,IAAI;AACtB,aAAW,CAAC,KAAK,KAAK,KAAK,OAAO,QAAQ,IAAI,GAAG;AAC/C,kBAAc,YAAY,WAAW,KAAK,KAAK;AAAA,EACjD;AAEA,SAAO;AACT;",
   "names": []
 }
