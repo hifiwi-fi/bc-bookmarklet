@@ -23,7 +23,7 @@ jobs:
     - run: npm i
     - run: npm test --color=always
     - name: Coveralls
-      uses: coverallsapp/github-action@v1
+      uses: coverallsapp/github-action@v2
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
 
