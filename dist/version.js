@@ -1,5 +1,5 @@
 // <define:PKG>
-var define_PKG_default = { ver: "1.0.6" };
+var define_PKG_default = { ver: "1.0.7" };
 
 // scripts/version.js
 var { ver } = define_PKG_default;
