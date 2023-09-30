@@ -6,7 +6,7 @@
     "dist/*.js.map",
     "./version.js"
   ],
-  "version": "1.0.8",
+  "version": "1.0.9",
   "author": "Bret Comnes <bcomnes@gmail.com> (https://bret.io)",
   "bugs": {
     "url": "https://github.com/hifiwi-fi/bc-bookmarklet/issues"
