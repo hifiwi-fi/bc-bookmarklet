@@ -7,7 +7,7 @@ function getBookmarklet(vars = {}) {
   for (const [key, value] of Object.entries(vars)) {
     bookmarklet = bookmarklet.replaceAll(key, value);
   }
-  return bookmarklet;
+  return bookmarklet.trim();
 }
 export {
   getBookmarklet as default

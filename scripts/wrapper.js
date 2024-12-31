@@ -4,5 +4,5 @@ export default function getBookmarklet (vars = {}) {
     bookmarklet = bookmarklet.replaceAll(key, value)
   }
 
-  return bookmarklet
+  return bookmarklet.trim()
 }
