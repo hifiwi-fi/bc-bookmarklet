@@ -40,7 +40,7 @@ export async function makeBookmarklet (src, dest) {
     bundle: true,
     format: 'esm',
     splitting: false,
-    sourcemap: true,
+    sourcemap: false,
     target: [
       'esnext'
     ],

@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["<define:PKG>", "../scripts/version.js"],
-  "sourcesContent": ["", "const { ver } = PKG // eslint-disable-line no-undef\nexport const version = ver\n"],
-  "mappings": ";AAAA,2BAAC,KAAM,SAAQ;;;ACAf,IAAM,EAAE,IAAI,IAAI;AACT,IAAM,UAAU;",
-  "names": []
-}

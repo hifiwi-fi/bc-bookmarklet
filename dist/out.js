@@ -12,4 +12,3 @@ function getBookmarklet(vars = {}) {
 export {
   getBookmarklet as default
 };
-//# sourceMappingURL=out.js.map

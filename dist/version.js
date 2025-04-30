@@ -7,4 +7,3 @@ var version = ver;
 export {
   version
 };
-//# sourceMappingURL=version.js.map

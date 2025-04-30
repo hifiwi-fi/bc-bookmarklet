@@ -25,7 +25,7 @@ Returns the bookmarklet text with simple runtime customizations so that environm
 
 ## How this works
 
-`esbuild` used used to build standard, modular esm code into a minified `iffi` target, and then the reults are stored in a json document that gets customised with `.replaceAll` in the exported `getBookmarklet` function.
+`esbuild` used used to build standard, modular esm code into a minified `iffi` target, and then the results are stored in a json document that gets customised with `.replaceAll` in the exported `getBookmarklet` function.
 
 ## See also
 

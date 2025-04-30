@@ -13,7 +13,7 @@ export async function makeVersionExport (src, dest) {
     bundle: true,
     format: 'esm',
     splitting: false,
-    sourcemap: true,
+    sourcemap: false,
     target: [
       'esnext'
     ],
