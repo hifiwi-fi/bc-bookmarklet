@@ -73,6 +73,6 @@
     ]
   },
   "dependencies": {
-    "@breadcrum/extract-meta": "2.0.0"
+    "@breadcrum/extract-meta": "2.0.1"
   }
 }
