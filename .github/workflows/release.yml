@@ -35,7 +35,7 @@ jobs:
     - run: git reset --hard && git clean -fd
     - run: git status
     - name: npm version && npm publish
-      uses: bcomnes/npm-bump@v2
+      uses: bcomnes/npm-bump@v3
       with:
         git_email: bcomnes@gmail.com
         git_username: ${{ github.actor }}
